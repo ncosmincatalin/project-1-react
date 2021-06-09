@@ -40,7 +40,7 @@ class App extends React.Component {
     return maxId;
   }
 
-  submitAddForm(event, name, email, isGoldClient) {
+  submitAddForm(event, name, email, salary, isGoldClient) {
     event.preventDefault();
     this.setState(prevState => {
       return {
@@ -50,6 +50,7 @@ class App extends React.Component {
             id: this.getMaxId(prevState.users) + 1,
             name,
             email,
+            salary,
             isGoldClient
           }
         ]
@@ -61,7 +62,7 @@ class App extends React.Component {
     return(
       <div className="app" style={{background: this.state.background}}>
         <h1>Admin panel - Proiectul 1</h1>
-        <UserAddForm submitAddForm={(event, name, email, isGoldClient) => this.submitAddForm(event, name, email, isGoldClient)}/>
+        <UserAddForm submitAddForm={(event, name, email, salary, isGoldClient) => this.submitAddForm(event, name, email, salary, isGoldClient)}/>
         <UserList users={this.state.users}/>
         <input type="color" onChange={(event) => this.changeColor(event)}/>
       </div>

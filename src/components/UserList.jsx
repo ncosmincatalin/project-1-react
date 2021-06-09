@@ -10,6 +10,7 @@ function UserList(props) {
             { users.map((user, index) => {
                 return <UserItem
                     id={ user.id }
+                    image={ user.image }
                     name={ user.name }
                     email={ user.email }
                     salary={ user.salary }

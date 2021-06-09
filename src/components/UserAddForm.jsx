@@ -4,11 +4,16 @@ class UserAddForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            image: '',
             name: '',
             email: '',
             salary: '',
             isGoldClient: false
         };
+    }
+
+    updateImage(event) {
+        this.setState({image: event.target.value});
     }
 
     updateName(event) {
@@ -28,14 +33,20 @@ class UserAddForm extends React.Component {
     }
 
     render() {
-        const {name, email, salary, isGoldClient} = this.state;
+        const {image, name, email, salary, isGoldClient} = this.state;
 
         return (
             <form
                 className="user-add-form"
-                onSubmit={(event) => this.props.submitAddForm(event, name, email, salary, isGoldClient)}
+                onSubmit={(event) => this.props.submitAddForm(event, image, name, email, salary, isGoldClient)}
             >
                 <h2>Adauga utilizatori:</h2>
+                <label htmlFor="image">Imagine:</label>
+                <input
+                    type="url"
+                    name="image"
+                    onChange={(event) => this.updateImage(event)}
+                />
                 <label htmlFor="name">Nume:</label>
                 <input
                     type="text"

@@ -5,7 +5,7 @@ function UserItem(props) {
 
     return (
         <div>
-            <img src={image} alt="No image found!"/>
+            <img src={image} alt="No cc found!"/>
             <h3>{ name }</h3>
             <p>{ email }</p>
             <p>{ salary } RON</p>

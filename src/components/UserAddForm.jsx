@@ -52,10 +52,11 @@ class UserAddForm extends React.Component {
                     type="text"
                     name="name"
                     onChange={(event) => this.updateName(event)}
+                    required
                 />
                 <label htmlFor="email">Email:</label>
                 <input
-                    type="text"
+                    type="email"
                     name="email"
                     onChange={(event) => this.updateEmail(event)}
                 />

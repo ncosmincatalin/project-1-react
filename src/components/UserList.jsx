@@ -3,6 +3,7 @@ import UserItem from './UserItem';
 
 function UserList(props) {
     const { users } = props;
+    
 
     return (
         <div>
@@ -16,6 +17,7 @@ function UserList(props) {
                     salary={ user.salary }
                     isGoldClient={ user.isGoldClient }
                     key={ index }
+                    // onDelete={ this.handleDelete }
                 />
             })}
         </div>
